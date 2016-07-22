@@ -1,0 +1,30 @@
+<?js var data = obj || {}; ?>
+
+<table class="params">
+    <thead>
+    <tr>
+        <?js if (data.type && data.type.names) { ?>
+          <th>Type</th>
+        <?js } ?>
+        <?js if (data.description) { ?>
+          <th class="last">Description</th>
+        <?js } ?>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <?js if (data.type && data.type.names) { ?>
+            <td class="type">  
+              <span class="param-type"><?js= this.partial('type.tmpl', data.type.names) ?></span>
+            </td>
+          <?js } ?>
+            
+          <?js if (data.description) { ?>
+            <td class="description last">
+              <?js= description ?>
+            </td>
+          <?js } ?>
+        </tr>
+    </tbody>
+</table>
